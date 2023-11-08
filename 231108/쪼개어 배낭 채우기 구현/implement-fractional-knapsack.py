@@ -2,10 +2,7 @@ N, M = tuple(map(int, input().split()))
 
 items = [list(map(int, input().split())) for _ in range(N)]
 
-for i in range(N):
-    price_per = items[i][1] / items[i][0]
-    items[i].append(price_per)
-items.sort(lambda item: item[2], reverse=True)
+items.sort(lambda item: item[1] / item[0], reverse=True)
 
 price = 0
 for item in items:
