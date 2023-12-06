@@ -1,13 +1,14 @@
+from heapq import *
+
 n = int(input())
 arr = list(map(int, input().split()))
-
+heap = heapify(arr)
 
 cost = 0
 while n != 1:
-    arr.sort(reverse=True)
-    a = arr.pop()
-    b = arr.pop()
+    a = heappop(arr)
+    b = heappop(arr)
     cost += a + b
-    arr.append(a + b)
+    heappush(arr, a + b)
     n -= 1
 print(cost)
