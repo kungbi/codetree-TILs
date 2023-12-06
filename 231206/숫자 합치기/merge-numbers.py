@@ -12,6 +12,8 @@ def f(input_list):
     for i in range(0, n - 1, 2):
         tmp_list.append(input_list[i] + input_list[i+1])
         cost += input_list[i] + input_list[i+1]
+    if n % 2 == 1:
+        tmp_list.append(input_list[n - 1])
     if len(tmp_list) != 1:
         return cost + f(tmp_list)
 
