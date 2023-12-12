@@ -11,9 +11,10 @@ for num in range(1, n * 2 + 1):
 score = 0
 a_arr.sort()
 b_arr.sort()
-for i in range(n):
-    for num in b_arr:
-        if a_arr[i] < num:
+for a in a_arr:
+    for b in b_arr:
+        if a < b:
             score += 1
-            b_arr.remove(num)
+            b_arr.remove(b)
+            break
 print(score)
