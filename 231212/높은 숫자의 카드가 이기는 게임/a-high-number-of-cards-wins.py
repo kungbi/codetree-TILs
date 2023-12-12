@@ -15,6 +15,7 @@ for a in a_arr:
     for b in b_arr:
         if a < b:
             score += 1
-            b_arr.remove(b)
             break
+        b_arr.remove(b)
+        
 print(score)
