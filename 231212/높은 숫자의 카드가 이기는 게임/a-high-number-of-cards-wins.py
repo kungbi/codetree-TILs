@@ -9,6 +9,7 @@ for num in range(1, n * 2 + 1):
         b_arr.append(num)
 
 score = 0
+a_arr.sort()
 b_arr.sort()
 for i in range(n):
     for num in b_arr:
