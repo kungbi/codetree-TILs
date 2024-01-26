@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
 
         System.out.println(sc.next().charAt(0));
-        System.out.println(Math.round(sc.nextDouble() * 100) / 100.0);
-        System.out.println(Math.round(sc.nextDouble() * 100) / 100.0);
+        System.out.printf("%.02f\n", sc.nextDouble());
+        System.out.printf("%.02f\n", sc.nextDouble());
     }
 }
