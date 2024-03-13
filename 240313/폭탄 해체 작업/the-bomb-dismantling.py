@@ -1,4 +1,6 @@
 import sys
+from heapq import heappop
+from heapq import heappush
 
 
 def input():
@@ -9,22 +11,20 @@ def solution():
     n = int(input())
     arr = []
     for _ in range(n):
-        arr.append(list(map(int, input().split())))
-    arr.sort(key=lambda x: x[1])
-    arr.reverse()
+        s, t = map(int, input().split())
+        arr.append((s, t))
 
-    t = 0
+    arr.sort(key=lambda x: x[1])
+    arr_i = n - 1
+    heap = []
     score = 0
-    while arr:
-        tmp = []
-        tmp.append(arr.pop())
-        while arr and arr[-1][1] == tmp[0][1]:
-            tmp.append(arr.pop())
-        max_score = 0
-        for b in tmp:
-            max_score = max(max_score, b[0])
-        score += max_score
-        t += 1
+    for i in range(10000, 0, -1):
+        while 0 <= arr_i and i <= arr[arr_i][1]:
+            heappush(heap, -arr[arr_i][0])
+            arr_i -= 1
+
+        if heap:
+            score += -heappop(heap)
     print(score)
 
 
