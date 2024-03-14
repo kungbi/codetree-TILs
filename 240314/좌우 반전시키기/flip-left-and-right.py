@@ -14,4 +14,11 @@ for i in range(1, n):
         push(arr, i)
         result += 1
 
-print(result)
+flag = 1
+for num in arr:
+    if num == 0:
+        flag = 0
+if flag:
+    print(result)
+else:
+    print(-1)
